@@ -21,6 +21,14 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.file_field :images,
+                label: :images %>
+
+      <% if resource.images.attached? %>
+        <% resource.images.each do |image| %>
+        <%= image_tag image %>
+        <% end %>
+      <% end %>
   </div>
 
   <div class="form-actions">
