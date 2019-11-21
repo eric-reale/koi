@@ -16,6 +16,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem "aws-sdk-s3", require: false
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
