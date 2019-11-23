@@ -11,7 +11,7 @@
   </head>
   <body>
     <%#= render 'shared/navbar' %>
-    <%= render 'layouts/nav' %>
+    <%= render 'layouts/nav' unless user_signed_in?%>
     <%= render 'shared/flashes' %>
 
     <div class="container-fluid p-0 bg-light">
