@@ -11,14 +11,14 @@
   </head>
   <body>
     <%#= render 'shared/navbar' %>
-    <%= render 'layouts/nav' %>
+    <%= render 'layouts/nav' unless user_signed_in?%>
     <%= render 'shared/flashes' %>
 
     <div class="container-fluid p-0 bg-light">
       <%= yield %>
 
     </div>
-    <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' unless user_signed_in?%>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
