@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+ # skip_before_action :verify_authenticity_token
+  protect_from_forgery with: :exception # :null_session
   before_action :authenticate_user!
 
   before_action :configure_devise, if: :devise_controller?
