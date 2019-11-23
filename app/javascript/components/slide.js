@@ -8,6 +8,24 @@ $(function() {
   });
 
   $("#approve").on("click", function(){
+    var user_id = $activeSlide.data("id");
+
+    $.ajaxSetup({
+  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+    $.ajax({
+      url: "/approve/" + user_id,
+      method: "post",
+      dataType: "ajax",
+      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
+      // data: { "authenticity_token": "<%= form_authenticity_token %>" }
+    });
+
+
+
       goToSlide('approve');
   });
 
